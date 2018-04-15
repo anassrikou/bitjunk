@@ -130,6 +130,18 @@ form.on('submit', function(e){
   const stock_price = this.stock_price.value;
   const description = this.description.value;
   const expire = this.expire.value;
+  var itemTemplate = `
+                  <tr>
+                  <td> ${name} </td>
+                  <td> ${owner} </td>
+                  <td> ${amount} </td>
+                  <td> ${stock_price} </td>
+                  <td> ${description}</td>
+                  <td> ${expire} </td>
+                  <td> <button class="btn btn-primary">buy</button></td>
+                  </tr>`;
+  var itemRow = $('#itemRow');
+  itemRow.append(itemTemplate);
   App.additem(name, owner, amount, stock_price, description, expire);
 
 });
