@@ -31,10 +31,10 @@
 		4. each user has access to the transactions page which hold all the transactions made by the users
 		
 	#Images :
-		![alt text](https://drive.google.com/open?id=1PgDzO-591exllrGT6A6GJL1Y9IoKjUIr "listing the items from all vendors")
-		![alt text](https://mega.nz/#!ItpS3LjZ!-jQpaDAUYVS8gcm1ZIjyDSiK195ZEo8bJtao9j17Nyo "adding a new item")
-		![alt text](https://mega.nz/#!gw5gUAoK!T6yr9d1z8MMdBkWqSlbLwwK7KoXUdoh_pR3pPHUfUjY "buying an item")
-		![alt text](https://mega.nz/#!N9pTTB5a!eUkjekd4zEiKXdKAPYvI-RtTcPzV1wtNJjX3I1J2UtY "listing all transactions")
+		![alt text](https://i.imgur.com/QgJfapy.png "listing the items from all vendors")
+		![alt text](https://i.imgur.com/y12e5kv.png "adding a new item")
+		![alt text](https://imgur.com/m3tUNjK.png "buying an item")
+		![alt text](https://imgur.com/Kv1gEtU.png "listing all transactions")
 	
 		
 	Copyright © Team Vanguards - BitJunk 2018
