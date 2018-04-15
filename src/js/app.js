@@ -41,6 +41,13 @@ App = {
     loader.show();
     content.hide();
 
+    // Load account data
+    web3.eth.getCoinbase(function(err, account) {
+      if (err === null) {
+        App.account = account;
+      }
+    });
+
     // Load contract data
     App.contracts.Junk.deployed().then(function(instance) {
       junkInstance = instance;
@@ -61,8 +68,8 @@ App = {
           var description = item[5];
           var expire = item[6];
 
-          // Render candidate Result
-          var itemTemplate = `
+          // Render items Result
+          itemTemplate = `
                   <tr>
                   <td> ${name} </td>
                   <td> ${owner} </td>
@@ -86,18 +93,17 @@ App = {
   buyItem: function(itemId) {
    // var itemId = $('#candidatesSelect').val();
     App.contracts.Junk.deployed().then(function(instance) {
-      return instance.buy(itemId, web3.eth.accounts[3], { from: App.account});
+      return instance.buy(itemId, { from: App.account});
     }).then(function(result) {
       // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
-      setTimeout(() => {$("#content").show}, 2000);
     }).catch(function(err) {
       console.error(err);
     });
   },
 
-  addItem: function(){
+  additem: function addItem(name, owner, amount, stock_price, description, expire){
     App.contracts.Junk.deployed().then(function(instance){
       return instance.addItem();
     }).then(function(result) {
@@ -113,5 +119,21 @@ App = {
 $(function() {
   $(window).load(function() {
     App.init();
+
+
+const form = $('#addform');
+form.on('submit', function(e){
+  e.preventDefault();
+  const name = this.name.value;
+  const owner = this.owner.value;
+  const amount = this.amount.value;
+  const stock_price = this.stock_price.value;
+  const description = this.description.value;
+  const expire = this.expire.value;
+  App.additem(name, owner, amount, stock_price, description, expire);
+
+});
+
+
   });
 });
